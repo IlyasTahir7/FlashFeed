@@ -30,7 +30,7 @@ const News = (props)=>{
     }
 
     useEffect(() => {
-        document.title = `${capitalizeFirstLetter(props.category)} - NewsMonkey`;
+        document.title = `${capitalizeFirstLetter(props.category)} - FlashFeed`;
         updateNews(); 
         // eslint-disable-next-line
     }, [])
@@ -47,7 +47,7 @@ const News = (props)=>{
  
         return (
             <>
-                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>NewsMonkey - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
+                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}><p style={{fontFamily:"lobster"  , fontSize:"60px"}}>FlashFeed</p><p style={{fontFamily:"Russo one"}}> Top {capitalizeFirstLetter(props.category)} Headlines</p></h1>
                 {loading && <Spinner />}
                 <InfiniteScroll
                     dataLength={articles.length}
@@ -55,9 +55,9 @@ const News = (props)=>{
                     hasMore={articles.length !== totalResults}
                     loader={<Spinner/>}
                 > 
-                    <div className="container">
+                    <div className="container ">
                          
-                    <div className="row">
+                    <div className="row ">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
                                 <NewsItem title={element.title ? element.title : ""} description={element.description ? element.description : ""} imageUrl={element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
