@@ -13,7 +13,7 @@ const App = ()=> {
  
     return (
       <div>
-        <Router>
+        <Router basename="/FlashFeed">
         <NavBar/> 
         <LoadingBar
         height={3}
@@ -21,7 +21,7 @@ const App = ()=> {
         progress={progress} 
       />
         <Switch>
-          <Route exact path="/"><News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general"/></Route> 
+          <Route exact  path="/FlashFeed"><News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general"/></Route> 
           <Route exact path="/business"><News setProgress={setProgress} apiKey={apiKey} key="business" pageSize={pageSize} country="in" category="business"/></Route> 
           <Route exact path="/entertainment"><News setProgress={setProgress} apiKey={apiKey} key="entertainment" pageSize={pageSize} country="in" category="entertainment"/></Route> 
           <Route exact path="/general"><News setProgress={setProgress} apiKey={apiKey} key="general" pageSize={pageSize} country="in" category="general"/></Route> 
