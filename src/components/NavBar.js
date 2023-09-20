@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-
+import LoadingBar from 'react-top-loading-bar'
 const NavBar = () => {
 
     return (
+        <>
         <div>
             <nav className="navbar fixed-top navbar-expand-lg navbar-warning bg-warning shadow-lg rounded-3" >
                 <div className="container-fluid">
@@ -30,6 +31,12 @@ const NavBar = () => {
                 </div>
             </nav>
         </div>
+        <LoadingBar
+        height={3}
+        color='#f11946'
+      
+      />
+        </>
     );
 }
 
